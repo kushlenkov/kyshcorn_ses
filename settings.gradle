@@ -1,3 +1,4 @@
 rootProject.name = 'ses'
 include 'client-api'
+include 'worker'
 
