@@ -1,4 +1,4 @@
-package kysh.corn.ses.client.store.entities;
+package kysh.corn.store.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

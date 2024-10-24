@@ -1,8 +1,7 @@
 package kysh.corn.ses.client.api.controllers;
 
-import kysh.corn.ses.client.service.EmailClientApi;
-import kysh.corn.ses.client.store.dao.SendEmailTaskDao;
-import kysh.corn.ses.client.store.entities.SendEmailTaskEntity;
+import kysh.corn.store.dao.SendEmailTaskDao;
+import kysh.corn.store.entities.SendEmailTaskEntity;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmailController {
 
     SendEmailTaskDao sendEmailTaskDao;
-
-    EmailClientApi emailClientApi;
 
     public static final String SEND_EMAIL = "/api/email/send";
 

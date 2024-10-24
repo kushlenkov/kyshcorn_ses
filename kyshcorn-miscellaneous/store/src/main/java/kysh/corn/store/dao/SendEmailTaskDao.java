@@ -1,7 +1,7 @@
-package kysh.corn.ses.client.store.dao;
+package kysh.corn.store.dao;
 
-import kysh.corn.ses.client.store.entities.SendEmailTaskEntity;
-import kysh.corn.ses.client.store.repositories.SendEmailTaskRepository;
+import kysh.corn.store.entities.SendEmailTaskEntity;
+import kysh.corn.store.repositories.SendEmailTaskRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

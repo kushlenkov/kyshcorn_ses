@@ -1,11 +1,10 @@
 /**
  * Submodules import sample
  */
-
-//dependencies {
+dependencies {
 //    implementation project(':kyshcorn-miscellaneous:data')
-//    implementation project(':kyshcorn-miscellaneous:store')
-//}
+    implementation project(':kyshcorn-miscellaneous:store')
+}
 
 /**
  * Spring
