@@ -2,7 +2,7 @@
  * Submodules import sample
  */
 dependencies {
-//    implementation project(':kyshcorn-miscellaneous:data')
+    implementation project(':kyshcorn-miscellaneous:data')
     implementation project(':kyshcorn-miscellaneous:store')
 }
 

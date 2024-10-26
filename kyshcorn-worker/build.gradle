@@ -1,4 +1,11 @@
 /**
+ * Submodules import sample
+ */
+dependencies {
+    implementation project(':kyshcorn-miscellaneous:store')
+}
+
+/**
  * Spring
  */
 dependencies {

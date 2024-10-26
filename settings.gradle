@@ -1,6 +1,7 @@
 rootProject.name = 'ses'
 
-include 'kyshcorn-client-api'
 include 'kyshcorn-worker'
+include 'kyshcorn-client-api'
 
 include 'kyshcorn-miscellaneous:store'
+include 'kyshcorn-miscellaneous:data'

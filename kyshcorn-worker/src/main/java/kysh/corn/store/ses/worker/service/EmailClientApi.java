@@ -1,22 +1,22 @@
-package kysh.corn.ses.client.service;
+package kysh.corn.store.ses.worker.service;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 @Log4j2
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RestController
+@Component
 public class EmailClientApi {
 
     @SneakyThrows
     public void sendEmail(String destinationEmail, String message) {
 
-        //TODO purururu, email send
+        // purururu, email send
         Thread.sleep(1000L);
 
         log.info("Email to %s successfully sent.".formatted(destinationEmail));
