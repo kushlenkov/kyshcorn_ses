@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -22,7 +23,7 @@ public class SendEmailTaskDao {
         return sendEmailTaskRepository.save(entity);
     }
 
-    public List<SendEmailTaskEntity> findAllNotProcessed() {
+    public List<Long> findNotProcessedIds() {
         return sendEmailTaskRepository.findAllNotProcessed();
     }
 
@@ -31,7 +32,12 @@ public class SendEmailTaskDao {
         sendEmailTaskRepository.markAsProcessed(entity.getId());
     }
 
+    @Transactional
     public void updateLatestTryAt(SendEmailTaskEntity entity) {
         sendEmailTaskRepository.updateLatestTryAt(entity.getId());
+    }
+
+    public Optional<SendEmailTaskEntity> findNotProcessedById(Long sendEmailTaskId) {
+        return sendEmailTaskRepository.findNotProcessedById(sendEmailTaskId);
     }
 }

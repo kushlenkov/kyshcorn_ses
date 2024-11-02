@@ -6,16 +6,25 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SendEmailTaskRepository extends JpaRepository<SendEmailTaskEntity, Long> {
 
     @Query("""
-        SELECT task
+        SELECT task.id
         FROM SendEmailTaskEntity task
         WHERE task.processedAt IS NULL
         ORDER BY task.createdAt
     """)
-    List<SendEmailTaskEntity> findAllNotProcessed();
+    List<Long> findAllNotProcessed();
+
+    @Query("""
+        SELECT task
+        FROM SendEmailTaskEntity task
+        WHERE task.id = :id
+            AND task.processedAt IS NULL
+    """)
+    Optional<SendEmailTaskEntity> findNotProcessedById(Long id);
 
     @Modifying
     @Query("""
