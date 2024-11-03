@@ -3,7 +3,6 @@ package kysh.corn.store.ses.worker.scheduled;
 import kysh.corn.store.dao.SendEmailTaskDao;
 import kysh.corn.store.entities.SendEmailTaskEntity;
 import kysh.corn.store.ses.worker.service.EmailClientApi;
-import kysh.corn.store.ses.worker.service.RedisLock;
 import kysh.corn.store.ses.worker.service.RedisLockWrapper;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +31,8 @@ public class SendEmailTaskScheduler {
 
     @Scheduled(cron = "*/5 * * * * *")
     public void executeSendEmailTasks() {
+
+        log.debug("Worker start execution.");
 
         List<Long> sendEmailTasksIds = sendEmailTaskDao.findNotProcessedIds();
 
